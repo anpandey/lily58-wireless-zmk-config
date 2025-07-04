@@ -92,6 +92,16 @@
             quick-tap-ms = <250>;
             require-prior-idle-ms = <100>;
         };
+
+        space_layer: space_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+            flavor = "balanced";
+            quick-tap-ms = <150>;
+            retro-tap;
+        };
     };
 };
 
@@ -112,7 +122,7 @@
                 &kp TAB   &kp Q  &HRM_left_ring RALT W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &HRM_right_ring RALT O  &kp P    &kp BSLH
                 &kp ESC   &HRM_left_pinky LGUI A &HRM_left_ring LALT S &HRM_left_middy LCTRL D &HRM_left_index LSHFT F &kp G                      &kp H  &HRM_right_index RSHFT J &HRM_right_middy RCTRL K &HRM_right_ring LALT L &HRM_right_pinky LGUI SEMI &kp SQT
                 &kp GRAVE &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                                &kp LEFT &kp RIGHT &mo 1  &kp BSPC  &kp RET  &kp SPACE  &kp UP &kp DOWN
+                                &kp LEFT &kp RIGHT &kp BSPC &mo 1 &kp RET  &space_layer 2 SPACE  &kp UP &kp DOWN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -132,6 +142,26 @@
 &kp GRAVE  &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp TILDE
 &trans     &trans           &trans            &trans            &trans       &trans    &trans   &trans    &trans    &kp MINUS &kp KP_PLUS     &kp LBRC  &kp RBRC  &kp PIPE
                                               &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+
+        symbol_layer {
+// ------------------------------------------------------------------------------------------------------------
+// | `     | [   | (   |  )   |  ]   |  .   |                   |      |       |       |      |       |       |
+// |  !    |  ,  |  {  |  }   |  ;   |  ?   |                   |  `   |  ←    |  ↑    |  ↓   | →     | END   |
+// |   #   |  ^  |  =  |  _   |  $   |  *   |                   |  "   |  BSPC |  TAB  |  SPC | ENTER | HOME  |
+// |  ~    |  <  |  |  |  -   |  >   |  /   |   \    |  |       |  '   |  DEL  |       |      |       |       |
+//                     |      |      |      |        |  |       |      |       |       |
+            display-name = "Symbol";
+            bindings = <
+                &kp GRAVE &kp LBKT  &kp LPAR  &kp RPAR  &kp RBKT  &kp DOT                        &none     &none     &none     &none      &none     &none
+                &kp EXCL  &kp COMMA &kp LBRC  &kp RBRC  &kp SEMI  &kp QMARK                      &kp GRAVE &kp LEFT  &kp UP    &kp DOWN   &kp RIGHT &kp END
+                &kp HASH  &kp CARET &kp EQUAL &kp UNDER &kp DLLR  &kp STAR                       &kp DQT   &kp BSPC  &kp TAB   &kp SPACE  &kp RET   &kp HOME
+                &kp TILDE &kp LT    &kp PIPE  &kp MINUS &kp GT    &kp FSLH  &kp BSLH   &none    &kp SQT   &kp DEL   &none     &none      &none     &none
+                                    &trans    &trans    &trans    &trans    &trans     &trans   &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
