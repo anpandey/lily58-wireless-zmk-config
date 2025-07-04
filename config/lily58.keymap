@@ -48,7 +48,7 @@
             tapping-term-ms = <210>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick极ap-ms = <250>;
+            quick-tap-ms = <250>;
             require-prior-idle-ms = <100>;
         };
 
