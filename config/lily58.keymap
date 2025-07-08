@@ -161,7 +161,7 @@
                 &kp EXCL  &kp COMMA &kp LBRC  &kp RBRC  &kp SEMI  &kp QMARK                      &kp GRAVE &kp LEFT  &kp UP    &kp DOWN   &kp RIGHT &kp END
                 &kp HASH  &kp CARET &kp EQUAL &kp UNDER &kp DLLR  &kp STAR                       &kp DQT   &kp BSPC  &kp TAB   &kp SPACE  &kp RET   &kp HOME
                 &kp TILDE &kp LT    &kp PIPE  &kp MINUS &kp GT    &kp FSLH  &kp BSLH   &none    &kp SQT   &kp DEL   &none     &none      &none     &none
-                                    &trans    &trans    &kp AMPS  &kp PLUS  &trans     &trans   &trans    &trans
+                                    &kp AMPS  &kp PLUS  &trans    &trans    &trans     &trans   &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
