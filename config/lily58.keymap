@@ -11,6 +11,13 @@
 
 / {
     behaviors {
+        capsword: capsword {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&caps_word>;
+        };
+
         // Left hand
         HRM_left_index: HRM_left_index {
             compatible = "zmk,behavior-hold-tap";
@@ -130,7 +137,7 @@
                 &kp EQUAL &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
                 &kp DEL   &kp Q  &HRM_left_ring RALT W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &HRM_right_ring RALT O  &kp P    &kp BSLH
                 &kp ESC   &HRM_left_pinky LGUI A &HRM_left_ring LALT S &HRM_left_middy LCTRL D &HRM_left_index LSHFT F &kp G                      &kp H  &HRM_right_index RSHFT J &HRM_right_middy RCTRL K &HRM_right_ring LALT L &HRM_right_pinky LGUI SEMI &kp SQT
-                &kp GRAVE &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                &kp GRAVE &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp  &capsword LSHFT
                                 &kp LEFT &kp RIGHT &kp BSPC &thumb_layer 1 TAB &kp RET  &space_layer 2 SPACE  &kp UP &kp DOWN
             >;
 
