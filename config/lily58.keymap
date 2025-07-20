@@ -241,14 +241,14 @@
 
         cursor_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
+// |       |     |     |      |      |      |                   | prnt |       |       |      |       |       |
 // |       |     |     |      |      |      |                   |      |pgup   | pgdwn | home | end   | ins   |
 // |       |     |     |      |      |      |                   |  left| down  | up    | right|xtendwd|xtendln|
 // |       |     |     |      |      |      |        |  |       |selline|selwrd |selall |selnone|       |       |
 //                     |      |      |      |        |  | bckspc| del  |       |       |
             display-name = "Cursor";
             bindings = <
-                &trans   &trans            &trans            &trans            &trans   &trans                      &trans         &trans   &trans   &trans   &trans   &trans
+                &trans   &trans            &trans            &trans            &trans   &trans                      &kp PSCRN      &trans   &trans   &trans   &trans   &trans
                 &trans   &trans            &trans            &trans            &trans   &trans                      &trans         &kp PG_UP &kp PG_DN &kp HOME &kp END  &kp INS
                 &trans   &trans            &trans            &trans            &trans   &trans                      &kp LEFT       &kp DOWN  &kp UP   &kp RIGHT &cur_EXTEND_WORD &cur_EXTEND_LINE
                 &trans   &trans            &trans            &trans            &trans   &trans   &trans   &trans    &cur_SELECT_LINE &cur_SELECT_WORD &cur_SELECT_ALL &cur_SELECT_NONE &trans &trans
