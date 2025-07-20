@@ -248,11 +248,11 @@
 //                     |      |      |      |        |  | bckspc| del  |       |       |
             display-name = "Cursor";
             bindings = <
-                &trans   &trans            &trans            &trans            &trans   &trans                      &kp PSCRN      &trans   &trans   &trans   &trans   &trans
-                &trans   &trans            &trans            &trans            &trans   &trans                      &trans         &kp PG_UP &kp PG_DN &kp HOME &kp END  &kp INS
-                &trans   &trans            &trans            &trans            &trans   &trans                      &kp LEFT       &kp DOWN  &kp UP   &kp RIGHT &cur_EXTEND_WORD &cur_EXTEND_LINE
-                &trans   &trans            &trans            &trans            &trans   &trans   &trans   &trans    &cur_SELECT_LINE &cur_SELECT_WORD &cur_SELECT_ALL &cur_SELECT_NONE &trans &trans
-                                           &trans            &trans            &trans   &trans   &kp BSPC &kp DEL   &trans         &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &kp PG_UP    &kp PG_DN     &trans        &trans       &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp HOME     &kp END       &trans        &trans       &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &kt LSHFT    &trans
+                &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
+                                  &trans   &trans   &trans   &trans   &kp BSPC &kp DEL   &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
