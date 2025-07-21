@@ -227,13 +227,13 @@
 // |   #   |  ^  |  =  |  _   |  $   |  *   |                   |  "   |  BSPC |  TAB  |  SPC | ENTER | HOME  |
 // |  ~    |  <  |  |  |  -   |  >   |  /   |   \    |  |       |  '   |  DEL  |       |      |       |       |
 //                     |  &   |  +   |  %   |        |  |       |      |       |       |
-            display-name = "Cursor";
+            display-name = "Symbol";
             bindings = <
-                &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &kp PG_UP    &kp PG_DN     &trans        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp HOME     &kp END       &trans        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &kt LSHFT    &trans
-                &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
-                                  &trans   &trans   &trans   &trans   &kp BSPC &kp DEL   &trans     &trans
+                &kp GRAVE &kp LBKT  &kp LPAR  &kp RPAR  &kp RBKT  &kp DOT                        &none     &none     &none     &none      &none     &none
+                &kp EXCL  &kp COMMA &kp LBRC  &kp RBRC  &kp SEMI  &kp QMARK                      &kp GRAVE &kp LEFT  &kp UP    &kp DOWN   &kp RIGHT &kp END
+                &kp HASH  &kp CARET &kp EQUAL &kp UNDER &kp DLLR  &kp STAR                       &kp DQT   &kp BSPC  &kp TAB   &kp SPACE  &kp RET   &kp HOME
+                &kp TILDE &kp LT    &kp PIPE  &kp MINUS &kp GT    &kp FSLH  &kp BSLH   &none    &kp SQT   &kp DEL   &none     &none      &none     &none
+                                    &kp AMPS  &kp PLUS  &kp PRCNT &trans    &trans     &trans   &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
