@@ -11,6 +11,18 @@
 
 / {
     macros {
+        bspc_off_4: bspc_off_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&layer_off 3 &kp BSPC>;
+        };
+
+        del_off_4: del_off_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&layer_off 3 &kp DEL>;
+        };
+
         cur_SELECT_ALL: cur_SELECT_ALL {
             label = "CUR_SELECT_ALL";
             compatible = "zmk,behavior-macro";
@@ -61,6 +73,16 @@
             tap-ms = <1>;
             wait-ms = <1>;
             bindings = <&kp LS(END)>;
+        };
+    };
+};
+
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        cursor_shifted_layer {
+            if-layers = <3 4>;
+            then-layer = <5>;
         };
     };
 };
@@ -174,6 +196,14 @@
             flavor = "balanced";
             quick-tap-ms = <300>;
         };
+
+        layer_off: layer_off {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Layer Toggle Off";
+            toggle-mode = "off";
+        };
+
     };
 };
 
@@ -250,12 +280,31 @@
             bindings = <
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &kp PG_UP    &kp PG_DN     &trans        &trans       &trans
                 &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp HOME     &kp END       &trans        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &kp LSHFT    &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &tog 4    &trans
                 &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
-                                  &trans   &trans   &trans   &trans   &kp BSPC &kp DEL   &trans     &trans
+                                  &trans   &trans   &trans   &trans   &bspc_off_4 &del_off_4 &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        cursor_dummy_layer {
+            bindings = <
+             &trans        &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
+             &trans        &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
+             &trans        &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
+             &trans        &trans        &trans        &trans        &trans        &trans &trans &trans &trans   &trans        &trans        &trans        &trans        &trans
+            >;
+        };
+
+
+        cursor_shifted_layer {
+            bindings = <
+             &trans        &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
+             &trans        &trans        &trans        &trans        &trans        &trans            &kp LC(LS(LEFT)) &kp LC(LS(DOWN)) &kp LC(LS(UP)) &kp LC(LS(RIGHT)) &trans &trans
+             &trans        &trans        &trans        &trans        &trans        &trans            &kp LS(HOME)  &kp LS(PG_DN) &kp LS(PG_UP) &kp LS(END)   &trans        &trans
+             &trans        &trans        &trans        &trans        &trans        &trans &trans &trans &trans   &trans        &trans        &trans        &trans        &trans
+            >;
         };
 
         extra_1 {
