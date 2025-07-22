@@ -26,7 +26,12 @@
         mod_off_4: mod_off_4 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&layer_off 4>, <&macro_param_1to1>, <&mo MACRO_PLACEHOLDER>;
+            bindings = <&layer_off 4>,
+            <&macro_param_1to1>,
+            <&macro_press &mo MACRO_PLACEHOLDER>,
+            <&macro_pause_for_release>,
+            <&macro_param_1to1>,
+            <&macro_release &mo MACRO_PLACEHOLDER>;
         };
     };
 };
