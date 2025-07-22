@@ -11,22 +11,22 @@
 
 / {
     macros {
-        bspc_off_3: bspc_off_3 {
+        bspc_off_4: bspc_off_4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&layer_off 3>, <&kp BSPC>;
+            bindings = <&layer_off 4>, <&kp BSPC>;
         };
 
-        del_off_3: del_off_3 {
+        del_off_4: del_off_4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&layer_off 3>, <&kp DEL>;
+            bindings = <&layer_off 4>, <&kp DEL>;
         };
 
-        mod_off_3: mod_off_3 {
+        mod_off_4: mod_off_4 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&layer_off 3>, <&macro_param_1to1>, <&mo MACRO_PLACEHOLDER>;
+            bindings = <&layer_off 4>, <&macro_param_1to1>, <&mo MACRO_PLACEHOLDER>;
         };
     };
 };
@@ -142,11 +142,11 @@
             retro-tap;
         };
 
-        thumb_layer_off_3: thumb_layer_off_3 {
+        thumb_layer_off_4: thumb_layer_off_4 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <&mod_off_3>, <&kp>;
+            bindings = <&mod_off_4>, <&kp>;
             flavor = "balanced";
             quick-tap-ms = <300>;
         };
@@ -187,7 +187,7 @@
                 &kp DEL   &kp Q  &HRM_left_ring RALT W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &HRM_right_ring RALT O  &kp P    &kp BSLH
                 &kp ESC   &HRM_left_pinky LGUI A &HRM_left_ring LALT S &HRM_left_middy LCTRL D &HRM_left_index LSHFT F &kp G                      &kp H  &HRM_right_index RSHFT J &HRM_right_middy RCTRL K &HRM_right_ring LALT L &HRM_right_pinky LGUI SEMI &kp SQT
                 &kp GRAVE &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &capsword LSHFT 0
-                                &kp LEFT &kp RIGHT &thumb_layer_off_3 3 BSPC &thumb_layer 1 TAB &kp RET  &space_layer 2 SPACE  &kp UP &kp DOWN
+                                &kp LEFT &kp RIGHT &thumb_layer_off_4 3 BSPC &thumb_layer 1 TAB &kp RET  &space_layer 2 SPACE  &kp UP &kp DOWN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -245,7 +245,7 @@
                 &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp HOME     &kp END       &trans        &trans       &trans
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &tog 4    &trans
                 &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
-                                  &trans   &trans   &trans   &trans   &bspc_off_3 &del_off_3 &trans     &trans
+                                  &trans   &trans   &trans   &trans   &bspc_off_4 &del_off_4 &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
