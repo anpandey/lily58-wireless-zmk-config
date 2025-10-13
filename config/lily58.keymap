@@ -254,7 +254,7 @@
             display-name = "Cursor";
             bindings = <
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &kp HOME     &kp END       &trans        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp PG_UP    &kp PG_DN     &kp K_APP     &trans       &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp PG_DN    &kp PG_UP     &kp K_APP     &trans       &trans
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &tog 4    &trans
                 &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
                                   &trans   &trans   &trans   &trans   &bspc_off_4 &del_off_4 &trans     &trans
@@ -266,7 +266,7 @@
         cursor_shifted_layer {
             bindings = <
                 &trans   &trans   &trans   &trans   &trans   &trans                      &trans &trans    &trans     &trans        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp LS(HOME)     &kp LS(END)       &trans        &trans       &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp LS(PG_DN)     &kp LS(PG_UP)       &trans        &trans       &trans
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(UP)        &kp LS(RIGHT)     &trans    &trans
                 &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LC(BSPC)  &kp LC(DEL)  &trans
                                   &trans   &trans   &trans   &trans   &trans &trans &trans     &trans
