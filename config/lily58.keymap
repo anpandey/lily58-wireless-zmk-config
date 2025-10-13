@@ -17,7 +17,7 @@
 &mmv {
     x-input-code = <INPUT_REL_X>;
     y-input-code = <INPUT_REL_Y>;
-    time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <600>;
     acceleration-exponent = <1>;
 };
 
@@ -246,15 +246,15 @@
 
         cursor_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   | prnt |pgup   | pgdown|      |       |       |
-// |       |     |     |      |      |      |                   |      |home   | end   |      |       |       |
+// |       |     |     |      |      |      |                   | prnt | end   |  home |      |       |       |
+// |       |     |     |      |      |      |                   |      |pgup   | pgdown|      |       |       |
 // |       |     |     |      |      |      |                   |  left| down  | up    | right|tgglsh |       |
 // |       |     |     |      |      |      |        |  |       |      |c-left |c-right|c-bksp|c-del  |       |
 //                     |      |      |      |        |  | bckspc| del  |       |       |
             display-name = "Cursor";
             bindings = <
-                &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &kp PG_UP    &kp PG_DN     &trans        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp HOME     &kp END       &kp K_APP        &trans       &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &kp HOME     &kp END       &trans        &trans       &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp PG_UP    &kp PG_DN     &kp K_APP     &trans       &trans
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &tog 4    &trans
                 &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
                                   &trans   &trans   &trans   &trans   &bspc_off_4 &del_off_4 &trans     &trans
