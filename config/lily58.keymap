@@ -13,13 +13,6 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
-&mymmv {
-    x-input-code = <INPUT_REL_X>;
-    y-input-code = <INPUT_REL_Y>;
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <1>;
-};
-
 / {
     macros {
         bspc_off_4: bspc_off_4 {
@@ -53,6 +46,13 @@
 };
 
 / {
+    &mymmv {
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        time-to-max-speed-ms = <500>;
+        acceleration-exponent = <1>;
+    };
+
     behaviors {
         capsword: capsword {
             compatible = "zmk,behavior-hold-tap";
