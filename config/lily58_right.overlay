@@ -1,0 +1,29 @@
+/*
+ * Wakeup configuration: right side (J key = home row forefinger)
+ *
+ * Matrix position: row 2, col 1 (local, with col-offset=6 → global col 7)
+ *   row 2 = pro_micro pin 7  = gpio0 11
+ *   col 1 = pro_micro pin 16 = gpio0 10
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+&kscan0 {
+    /delete-property/ wakeup-source;
+};
+
+/ {
+    wakeup_scan: kscan_wakeup {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        row-gpios = <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        col-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
+    };
+
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&wakeup_scan>;
+    };
+};
