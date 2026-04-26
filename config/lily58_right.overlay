@@ -1,9 +1,9 @@
 /*
- * Wakeup configuration: right side (J key = home row forefinger)
+ * Wakeup configuration: right side (] key = inner thumb)
  *
- * Matrix position: row 2, col 1 (local, with col-offset=6 → global col 7)
- *   row 2 = pro_micro pin 7  = gpio0 11
- *   col 1 = pro_micro pin 16 = gpio0 10
+ * Matrix position: row 4, col 0 (local, with col-offset=6 → global col 6)
+ *   row 4 = pro_micro pin 9  = gpio1 6
+ *   col 0 = pro_micro pin 10 = gpio0 9
  */
 
 #include <zephyr/dt-bindings/gpio/gpio.h>
@@ -14,8 +14,8 @@
         diode-direction = "col2row";
         wakeup-source;
 
-        row-gpios = <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-        col-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
+        row-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        col-gpios = <&pro_micro 10 GPIO_ACTIVE_HIGH>;
     };
 
     soft_off_wakers {
