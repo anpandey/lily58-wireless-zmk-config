@@ -8,10 +8,6 @@
 
 #include <zephyr/dt-bindings/gpio/gpio.h>
 
-&kscan0 {
-    /delete-property/ wakeup-source;
-};
-
 / {
     wakeup_scan: kscan_wakeup {
         compatible = "zmk,kscan-gpio-matrix";
