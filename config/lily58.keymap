@@ -235,9 +235,9 @@
             display-name = "Symbol";
             bindings = <
                 &kp GRAVE &kp LBKT  &kp LPAR  &kp RPAR  &kp RBKT  &kp DOT                        &none     &none     &none     &none      &none     &none
-                &kp EXCL  &kp COMMA &kp LBRC  &kp RBRC  &kp SEMI  &kp QMARK                      &kp GRAVE &kp LEFT  &kp UP    &kp DOWN   &kp RIGHT &kp END
-                &kp HASH  &kp CARET &kp EQUAL &kp UNDER &kp DLLR  &kp STAR                       &kp DQT   &kp BSPC  &kp TAB   &kp SPACE  &kp RET   &kp HOME
-                &kp TILDE &kp LT    &kp PIPE  &kp MINUS &kp GT    &kp FSLH  &kp BSLH   &none    &kp SQT   &kp DEL   &none     &none      &none     &none
+                &kp EXCL  &kp AMPS  &kp LBKT  &kp RBKT  &kp PLUS  &kp PRCNT &kp LT                         &kp GT    &kp TILDE &kp DLLR  &kp RIGHT &kp END
+                &kp HASH  &kp LBRC  &kp LPAR  &kp RPAR  &kp RBRC  &kp MINUS                       &kp UNDER &kp EQUAL &kp HASH  &kp STAR   &kp GRAVE &kp HOME
+                &kp TILDE &kp PIPE  &kp SQT   &kp DQT   &kp AT    &kp EXCL  &kp BSLH   &none    &kp CARET &kp EXCL  &none     &none      &none     &none
                                     &kp AMPS  &kp PLUS  &kp PRCNT &trans    &trans     &trans   &trans    &trans
             >;
 
