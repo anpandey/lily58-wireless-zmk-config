@@ -254,8 +254,8 @@
             display-name = "Cursor";
             bindings = <
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &kp HOME     &kp END       &trans        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp PG_DN    &kp PG_UP     &kp K_APP     &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &tog 4    &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp PG_DN    &kp PG_UP     &tog 4        &trans       &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &kp BSPC    &kp TAB
                 &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
                                   &trans   &trans   &trans   &trans   &bspc_off_4 &del_off_4 &trans     &trans
             >;
