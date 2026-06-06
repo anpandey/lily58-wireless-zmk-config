@@ -13,6 +13,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
+#define LAYER_CursorCtrl 9
 
 &mmv {
     x-input-code = <INPUT_REL_X>;
@@ -49,6 +50,54 @@
             <&macro_param_1to1>,
             <&macro_release &mo MACRO_PLACEHOLDER>,
             <&macro_tap &layer_off 4>;
+        };
+
+        cur_ctrl_stab: cur_ctrl_stab {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&kt_on LCTRL>, <&tog_on LAYER_CursorCtrl>, <&kp LS(TAB)>;
+        };
+
+        cur_ctrl_tab: cur_ctrl_tab {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&kt_on LCTRL>, <&tog_on LAYER_CursorCtrl>, <&kp TAB>;
+        };
+
+        cur_ctrl_exit: cur_ctrl_exit {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings = <&kt_off LCTRL>,
+                       <&layer_off LAYER_CursorCtrl>,
+                       <&macro_param_1to1>,
+                       <&kp MACRO_PLACEHOLDER>;
+        };
+
+        cur_ctrl_exit_tog4: cur_ctrl_exit_tog4 {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&kt_off LCTRL>, <&layer_off LAYER_CursorCtrl>, <&tog 4>;
+        };
+
+        cur_ctrl_exit_bspc: cur_ctrl_exit_bspc {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&kt_off LCTRL>, <&layer_off LAYER_CursorCtrl>, <&layer_off 4>, <&kp BSPC>;
+        };
+
+        cur_ctrl_exit_del: cur_ctrl_exit_del {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&kt_off LCTRL>, <&layer_off LAYER_CursorCtrl>, <&layer_off 4>, <&kp DEL>;
         };
     };
 };
@@ -179,6 +228,27 @@
             toggle-mode = "off";
         };
 
+        kt_on: kt_on {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+            display-name = "Key Toggle On";
+            toggle-mode = "on";
+        };
+
+        kt_off: kt_off {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+            display-name = "Key Toggle Off";
+            toggle-mode = "off";
+        };
+
+        tog_on: tog_on {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
+
     };
 };
 
@@ -229,14 +299,14 @@
 // ------------------------------------------------------------------------------------------------------------
 // | `     | [   | (   |  )   |  ]   |  .   |                   |      |       |       |      |       |       |
 // |  !    |  ,  |  {  |  }   |  ;   |  ?   |                   |  `   |  ←    |  ↑    |  ↓   | →     | END   |
-// |   #   |  ^  |  =  |  _   |  $   |  *   |                   |  "   |  BSPC |  TAB  |  SPC | ENTER | HOME  |
+// |   #   |  {  |  (  |  )   |  }   |  =   |                   |  #   |  -    |  _    |  *   | `     | HOME  |
 // |  ~    |  <  |  |  |  -   |  >   |  /   |   \    |  |       |  '   |  DEL  |       |      |       |       |
 //                     |  &   |  +   |  %   |        |  |       |      |       |       |
             display-name = "Symbol";
             bindings = <
                 &kp GRAVE &kp LBKT  &kp LPAR  &kp RPAR  &kp RBKT  &kp DOT                        &none     &none     &none     &none      &none     &none
                 &kp EXCL  &kp AMPS  &kp LBKT  &kp RBKT  &kp PLUS  &kp PRCNT &kp LT                         &kp GT    &kp TILDE &kp DLLR  &kp RIGHT &kp END
-                &kp HASH  &kp LBRC  &kp LPAR  &kp RPAR  &kp RBRC  &kp MINUS                       &kp UNDER &kp EQUAL &kp HASH  &kp STAR   &kp GRAVE &kp HOME
+                &kp HASH  &kp LBRC  &kp LPAR  &kp RPAR  &kp RBRC  &kp EQUAL                       &kp HASH &kp MINUS &kp UNDER  &kp STAR   &kp GRAVE &kp HOME
                 &kp TILDE &kp PIPE  &kp SQT   &kp DQT   &kp AT    &kp EXCL  &kp BSLH   &none    &kp CARET &kp EXCL  &none     &none      &none     &none
                                     &kp AMPS  &kp PLUS  &kp PRCNT &trans    &trans     &trans   &trans    &trans
             >;
@@ -254,8 +324,8 @@
             display-name = "Cursor";
             bindings = <
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &kp HOME     &kp END       &trans        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp PG_DN    &kp PG_UP     &tog 4        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &kp BSPC    &kp TAB
+                &trans   &trans   &cur_ctrl_stab   &cur_ctrl_tab   &trans   &trans          &trans     &kp PG_DN    &kp PG_UP     &kp LS(TAB)   &kp TAB      &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &kp BSPC    &tog 4
                 &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
                                   &trans   &trans   &trans   &trans   &bspc_off_4 &del_off_4 &trans     &trans
             >;
@@ -303,6 +373,16 @@
 
         extra_3 {
             status = "reserved";
+        };
+
+        cursor_ctrl_layer {
+            bindings = <
+                &trans   &trans   &trans           &trans          &trans   &trans          &cur_ctrl_exit PSCRN   &cur_ctrl_exit HOME   &cur_ctrl_exit END   &trans   &trans   &trans
+                &trans   &trans   &kp LS(TAB)      &kp TAB         &trans   &trans          &trans   &cur_ctrl_exit PG_DN   &cur_ctrl_exit PG_UP   &cur_ctrl_exit LS(TAB)   &cur_ctrl_exit TAB   &trans
+                &trans   &trans   &trans           &trans          &trans   &trans          &cur_ctrl_exit LEFT   &cur_ctrl_exit DOWN   &cur_ctrl_exit UP   &cur_ctrl_exit RIGHT   &cur_ctrl_exit BSPC   &cur_ctrl_exit_tog4
+                &trans   &trans   &trans           &trans          &trans   &trans   &trans   &trans    &trans   &cur_ctrl_exit LC(LEFT)   &cur_ctrl_exit LC(RIGHT)   &cur_ctrl_exit LC(BSPC)   &cur_ctrl_exit LC(DEL)   &trans
+                                  &trans           &trans          &trans   &trans   &cur_ctrl_exit_bspc   &cur_ctrl_exit_del   &trans   &trans
+            >;
         };
 
 };
