@@ -9,10 +9,6 @@
 #include <zephyr/dt-bindings/gpio/gpio.h>
 
 / {
-    chosen {
-        zmk,kscan = &sideband_scan;
-    };
-
     behaviors {
         hold_soft_off: hold_soft_off {
             compatible = "zmk,behavior-soft-off";

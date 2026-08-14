@@ -16,6 +16,12 @@
 #define LAYER_CtrlFlag 9
 #define LAYER_CursorCtrl 10
 
+/ {
+    chosen {
+        zmk,kscan = &sideband_scan;
+    };
+};
+
 &mmv {
     x-input-code = <INPUT_REL_X>;
     y-input-code = <INPUT_REL_Y>;
