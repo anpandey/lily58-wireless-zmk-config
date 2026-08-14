@@ -9,6 +9,31 @@
 #include <zephyr/dt-bindings/gpio/gpio.h>
 
 / {
+    chosen {
+        zmk,kscan = &sideband_scan;
+    };
+
+    behaviors {
+        hold_soft_off: hold_soft_off {
+            compatible = "zmk,behavior-soft-off";
+            #binding-cells = <0>;
+            display-name = "Hold Soft Off";
+            hold-time-ms = <2000>;
+        };
+    };
+
+    sideband_scan: kscan_sideband {
+        compatible = "zmk,kscan-sideband-behaviors";
+        kscan = <&kscan0>;
+        wakeup-source;
+
+        soft_off_hold {
+            row = <4>;
+            column = <0>;
+            bindings = <&hold_soft_off>;
+        };
+    };
+
     wakeup_scan: kscan_wakeup {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";

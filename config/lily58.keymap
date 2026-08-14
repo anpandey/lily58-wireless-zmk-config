@@ -196,6 +196,14 @@
             require-prior-idle-ms = <150>;
         };
 
+        bkt_tap: bkt_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            bindings = <&none>, <&kp>;
+            flavor = "tap-preferred";
+        };
+
         space_layer: space_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -281,7 +289,7 @@
                 &kp EQUAL &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
                 &kp DEL   &kp Q  &HRM_left_ring RALT W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &HRM_right_ring RALT O  &kp P    &kp BSLH
                 &kp ESC   &HRM_left_pinky LGUI A &HRM_left_ring LALT S &HRM_left_middy LCTRL D &HRM_left_index LSHFT F &kp G                      &kp H  &HRM_right_index RSHFT J &HRM_right_middy RCTRL K &HRM_right_ring LALT L &HRM_right_pinky LGUI SEMI &kp SQT
-                &kp GRAVE &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &capsword LSHFT 0
+                &kp GRAVE &kp Z  &kp X  &kp C    &kp V    &kp B  &bkt_tap 0 LBKT   &bkt_tap 0 RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &capsword LSHFT 0
                                 &kp LEFT &kp RIGHT &thumb_layer_off_4 3 BSPC &thumb_layer 1 TAB &thumb_layer 5 RET  &space_layer 2 SPACE  &kp UP &kp DOWN
             >;
 
@@ -317,7 +325,7 @@
 //                     |  &   |  +   |  %   |        |  |       |      |       |       |
             display-name = "Symbol";
             bindings = <
-                &kp GRAVE &kp LBKT  &kp LPAR  &kp RPAR  &kp RBKT  &kp DOT                        &none     &none     &none     &none      &none     &none
+                &kp GRAVE &kp LBKT  &kp LPAR  &kp RPAR  &kp RBKT  &kp DOT                        &none     &sk RSHFT &sk RCTRL &sk RALT   &sk RGUI  &none
                 &kp EXCL  &kp AMPS  &kp LBKT  &kp RBKT  &kp PLUS  &kp PRCNT &kp LT                         &kp GT    &kp TILDE &kp DLLR  &kp RIGHT &kp END
                 &kp HASH  &kp LBRC  &kp LPAR  &kp RPAR  &kp RBRC  &kp EQUAL                       &kp HASH &kp MINUS &kp UNDER  &kp STAR   &kp GRAVE &kp HOME
                 &kp TILDE &kp PIPE  &kp SQT   &kp DQT   &kp AT    &kp EXCL  &kp BSLH   &none    &kp CARET &kp EXCL  &none     &none      &none     &none
@@ -348,10 +356,10 @@
 
         cursor_shifted_layer {
             bindings = <
-                &trans   &trans   &trans   &trans   &trans   &trans                      &trans &trans    &trans     &trans        &trans       &trans
-                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp LS(PG_DN)     &kp LS(PG_UP)       &trans        &trans       &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN &kp LS(HOME) &kp LS(END) &trans        &trans       &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &trans     &kp PG_DN         &kp PG_UP           &trans        &trans       &trans
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(UP)        &kp LS(RIGHT)     &trans    &trans
-                &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LC(BSPC)  &kp LC(DEL)  &trans
+                &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &kp LS(BSPC)  &kp LS(DEL)  &trans
                                   &trans   &trans   &trans   &trans   &trans &trans &trans     &trans
             >;
         };
