@@ -403,7 +403,7 @@
                 &trans &trans &trans &trans &trans &trans                      &trans &trans &trans &trans &trans &trans
                 &trans &kp N1 &kp N2 &kp N3 &kp N4 &trans                      &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
-                              &trans &kp R  &kp SPACE &trans                  &trans &trans &trans &tog 6
+                              &trans &trans  &kp R &kp SPACE                  &trans &trans &trans &tog 6
             >;
         };
 
