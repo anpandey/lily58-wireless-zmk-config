@@ -289,14 +289,14 @@
 // | DEL |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // | ESC |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | `   |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | ←  |  →   | BSPC |  TAB2 |  | ENTER | SPACE|  ↑    |  ↓    |
+//                     | tog3 | tog5 | BSPC |  TAB2 |  | ENTER | SPACE|  ↑    |  ↓    |
             display-name = "Base";
             bindings = <
                 &kp EQUAL &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
                 &kp DEL   &kp Q  &HRM_left_ring RALT W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &HRM_right_ring RALT O  &kp P    &kp BSLH
                 &kp ESC   &HRM_left_pinky LGUI A &HRM_left_ring LALT S &HRM_left_middy LCTRL D &HRM_left_index LSHFT F &kp G                      &kp H  &HRM_right_index RSHFT J &HRM_right_middy RCTRL K &HRM_right_ring LALT L &HRM_right_pinky LGUI SEMI &kp SQT
                 &kp GRAVE &kp Z  &kp X  &kp C    &kp V    &kp B  &bkt_tap 0 LBKT   &bkt_tap 0 RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &capsword LSHFT 0
-                                &kp LEFT &kp RIGHT &thumb_layer_off_4 3 BSPC &thumb_layer 1 TAB &thumb_layer 5 RET  &space_layer 2 SPACE  &kp UP &kp DOWN
+                                &tog 3 &tog 5 &thumb_layer_off_4 3 BSPC &thumb_layer 1 TAB &thumb_layer 5 RET  &space_layer 2 SPACE  &kp PGDOWN &kp PGUP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -313,9 +313,9 @@
             bindings = <
 &trans     &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans    &trans    &trans    &bt BT_CLR
 &kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8    &kp F9          &kp F10   &kp F11   &kp F12
-&none      &none            &none             &none             &none        &none                        &none     &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
+&none      &none            &none             &none             &none        &none                        &kp C_BRIGHTNESS_DEC  &kp C_VOL_DN &kp C_VOL_UP  &kp C_BRIGHTNESS_INC &kp C_MUTE  &kp C_BRIGHTNESS_INC
 &soft_off  &trans           &trans            &trans            &trans       &trans    &trans   &trans    &trans    &none     &none           &none     &none     &trans
-                                              &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans
+                                              &trans            &trans       &trans    &trans   &trans    &trans    &trans    &tog 6
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -354,7 +354,7 @@
                 &trans   &trans   &cur_ctrl_stab   &cur_ctrl_tab   &trans   &trans          &trans     &kp PG_DN    &kp PG_UP     &kp LS(TAB)   &kp TAB      &trans
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &kp BSPC    &tog 4
                 &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
-                                  &trans   &trans   &trans   &trans   &bspc_off_4 &del_off_4 &trans     &trans
+                                  &trans   &trans   &trans   &trans   &trans &trans &bspc_off_4 &del_off_4
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -390,8 +390,21 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        extra_1 {
-            status = "reserved";
+        flash_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |trans|trans|trans|trans |trans |trans |                   |trans |trans  |trans  |trans |trans  |trans  |
+// |trans|trans|trans|trans |trans |trans |                   |trans |trans  |trans  |trans |trans  |trans  |
+// |trans|  1  |  2  |  3   |  4   |trans |                   |trans |trans  |trans  |trans |trans  |trans  |
+// |trans|trans|trans|trans |trans |trans |   trans |  | trans |trans |trans  |trans  |trans |trans  |trans  |
+//                     |     |  R  |SPACE |        |  |       |      |       |  tog  |
+            display-name = "Flash";
+            bindings = <
+                &trans &trans &trans &trans &trans &trans                      &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans                      &trans &trans &trans &trans &trans &trans
+                &trans &kp N1 &kp N2 &kp N3 &kp N4 &trans                      &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
+                              &trans &kp R  &kp SPACE &trans                  &trans &trans &trans &tog 6
+            >;
         };
 
         extra_2 {
