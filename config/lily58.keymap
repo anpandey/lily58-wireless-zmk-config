@@ -296,7 +296,7 @@
                 &kp DEL   &kp Q  &HRM_left_ring RALT W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &HRM_right_ring RALT O  &kp P    &kp BSLH
                 &kp ESC   &HRM_left_pinky LGUI A &HRM_left_ring LALT S &HRM_left_middy LCTRL D &HRM_left_index LSHFT F &kp G                      &kp H  &HRM_right_index RSHFT J &HRM_right_middy RCTRL K &HRM_right_ring LALT L &HRM_right_pinky LGUI SEMI &kp SQT
                 &kp GRAVE &kp Z  &kp X  &kp C    &kp V    &kp B  &bkt_tap 0 LBKT   &bkt_tap 0 RBKT &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &capsword LSHFT 0
-                                &tog 3 &tog 5 &thumb_layer_off_4 3 BSPC &thumb_layer 1 TAB &thumb_layer 5 RET  &space_layer 2 SPACE  &kp PGDOWN &kp PGUP
+                                &tog 3 &KP PG_DN &thumb_layer_off_4 3 BSPC &thumb_layer 1 TAB &thumb_layer 5 RET  &space_layer 2 SPACE  &kp PG_UP &tog 5
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
