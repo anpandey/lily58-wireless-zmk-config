@@ -350,8 +350,8 @@
 //                     |      |      |      |        |  | bckspc| del  |       |       |
             display-name = "Cursor";
             bindings = <
-                &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &kp HOME     &kp END       &trans        &trans       &trans
-                &trans   &trans   &cur_ctrl_stab   &cur_ctrl_tab   &trans   &trans          &trans     &kp PG_DN    &kp PG_UP     &kp LS(TAB)   &kp TAB      &trans
+                &trans   &trans   &trans   &trans   &trans   &trans                      &kp PSCRN  &trans     &trans       &trans        &trans       &trans
+                &trans   &trans   &cur_ctrl_stab   &cur_ctrl_tab   &trans   &trans          &trans     &kp HOME    &kp END     &kp LS(TAB)   &kp TAB      &trans
                 &trans   &trans   &trans   &trans   &trans   &trans                      &kp LEFT   &kp DOWN     &kp UP        &kp RIGHT     &kp BSPC    &tog 4
                 &trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans     &kp LC(LEFT) &kp LC(RIGHT) &kp LC(BSPC)  &kp LC(DEL)  &trans
                                   &trans   &trans   &trans   &trans   &trans &trans &bspc_off_4 &del_off_4
