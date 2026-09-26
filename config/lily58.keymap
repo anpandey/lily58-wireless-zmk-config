@@ -127,7 +127,7 @@
             tapping-term-ms = <120>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <250>;
+            quick-tap-ms = <300>;
             require-prior-idle-ms = <50>;
         };
 
@@ -137,7 +137,7 @@
             tapping-term-ms = <160>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <250>;
+            quick-tap-ms = <300>;
             require-prior-idle-ms = <100>;
         };
 
@@ -147,7 +147,7 @@
             tapping-term-ms = <190>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <250>;
+            quick-tap-ms = <300>;
             require-prior-idle-ms = <100>;
         };
 
@@ -168,7 +168,7 @@
             tapping-term-ms = <120>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <250>;
+            quick-tap-ms = <300>;
             require-prior-idle-ms = <50>;
         };
 
@@ -178,7 +178,7 @@
             tapping-term-ms = <160>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <250>;
+            quick-tap-ms = <300>;
             require-prior-idle-ms = <100>;
         };
 
@@ -188,7 +188,7 @@
             tapping-term-ms = <190>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <250>;
+            quick-tap-ms = <300>;
             require-prior-idle-ms = <100>;
         };
 
