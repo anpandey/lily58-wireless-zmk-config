@@ -127,8 +127,8 @@
             tapping-term-ms = <120>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <300>;
-            require-prior-idle-ms = <125>;
+            quick-tap-ms = <250>;
+            require-prior-idle-ms = <50>;
         };
 
         HRM_left_middy: HRM_left_middy {
@@ -137,8 +137,8 @@
             tapping-term-ms = <160>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <300>;
-            require-prior-idle-ms = <175>;
+            quick-tap-ms = <250>;
+            require-prior-idle-ms = <100>;
         };
 
         HRM_left_ring: HRM_left_ring {
@@ -147,8 +147,8 @@
             tapping-term-ms = <190>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <300>;
-            require-prior-idle-ms = <175>;
+            quick-tap-ms = <250>;
+            require-prior-idle-ms = <100>;
         };
 
         HRM_left_pinky: HRM_left_pinky {
@@ -158,7 +158,7 @@
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
             quick-tap-ms = <250>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <100>;
         };
 
         // Right hand
@@ -168,8 +168,8 @@
             tapping-term-ms = <120>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <300>;
-            require-prior-idle-ms = <125>;
+            quick-tap-ms = <250>;
+            require-prior-idle-ms = <50>;
         };
 
         HRM_right_middy: HRM_right_middy {
@@ -178,8 +178,8 @@
             tapping-term-ms = <160>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <300>;
-            require-prior-idle-ms = <175>;
+            quick-tap-ms = <250>;
+            require-prior-idle-ms = <100>;
         };
 
         HRM_right_ring: HRM_right_ring {
@@ -188,8 +188,8 @@
             tapping-term-ms = <190>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <300>;
-            require-prior-idle-ms = <175>;
+            quick-tap-ms = <250>;
+            require-prior-idle-ms = <100>;
         };
 
         HRM_right_pinky: HRM_right_pinky {
@@ -199,7 +199,7 @@
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
             quick-tap-ms = <250>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <100>;
         };
 
         bkt_tap: bkt_tap {
@@ -213,29 +213,29 @@
         space_layer: space_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <150>;
             bindings = <&mo>, <&kp>;
             flavor = "balanced";
-            quick-tap-ms = <200>;
+            quick-tap-ms = <100>;
             retro-tap;
         };
 
         thumb_layer_off_4: thumb_layer_off_4 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <150>;
             bindings = <&mod_off_4>, <&kp>;
             flavor = "balanced";
-            quick-tap-ms = <350>;
+            quick-tap-ms = <250>;
         };
 
         thumb_layer: thumb_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <150>;
             bindings = <&mo>, <&kp>;
             flavor = "balanced";
-            quick-tap-ms = <350>;
+            quick-tap-ms = <250>;
         };
 
         layer_off: layer_off {
@@ -289,7 +289,7 @@
 // | DEL |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
 // | ESC |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | `   |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//                     | tog3 | tog5 | BSPC |  TAB2 |  | ENTER | SPACE|  ↑    |  ↓    |
+//                     | HOME | END | BSPC |  TAB2 |  | ENTER | SPACE|  PGDN    |  PGUP    |
             display-name = "Base";
             bindings = <
                 &kp EQUAL &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
